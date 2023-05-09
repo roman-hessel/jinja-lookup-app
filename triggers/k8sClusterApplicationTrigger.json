@@ -11,7 +11,17 @@
         "database": "ccc",
         "collection": "k8s cluster",
         "service_name": "mongodb-atlas",
-        "match": {},
+        "match": {
+            "updateDescription.updatedFields.revision": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.validFrom": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.originId": {
+                "$exists": false
+            }
+        },
         "project": {},
         "full_document": true,
         "full_document_before_change": true,
