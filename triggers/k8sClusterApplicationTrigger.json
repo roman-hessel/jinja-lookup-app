@@ -20,6 +20,9 @@
             },
             "updateDescription.updatedFields.originId": {
                 "$exists": false
+            },
+            "applications": {
+                "$exists": true
             }
         },
         "project": {},

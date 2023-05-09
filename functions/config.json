@@ -8,10 +8,6 @@
         "private": true
     },
     {
-        "name": "myFunc",
-        "private": true
-    },
-    {
         "name": "k8sClusterApplicationFunction",
         "private": true
     }
