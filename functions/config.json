@@ -1,0 +1,18 @@
+[
+    {
+        "name": "createVirtualMachineHistory",
+        "private": true
+    },
+    {
+        "name": "createK8sClusterHistory",
+        "private": true
+    },
+    {
+        "name": "myFunc",
+        "private": true
+    },
+    {
+        "name": "k8sClusterApplicationFunction",
+        "private": true
+    }
+]

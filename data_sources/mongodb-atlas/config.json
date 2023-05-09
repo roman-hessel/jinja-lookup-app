@@ -1,0 +1,17 @@
+{
+    "name": "mongodb-atlas",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "Cluster0",
+        "namespacePreimageConfigs": [
+            {
+                "collectionName": "k8s cluster",
+                "dbName": "ccc",
+                "recordPreimages": true
+            }
+        ],
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}

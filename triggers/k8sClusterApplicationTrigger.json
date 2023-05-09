@@ -1,0 +1,30 @@
+{
+    "id": "6458f30d36d54951225b116c",
+    "name": "k8sClusterApplicationTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "ccc",
+        "collection": "k8s cluster",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false,
+        "skip_catchup_events": false,
+        "tolerate_resume_errors": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "k8sClusterApplicationFunction"
+            }
+        }
+    }
+}

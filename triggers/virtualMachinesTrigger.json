@@ -1,0 +1,40 @@
+{
+    "id": "6454f48b5cc37aa30ba37fe8",
+    "name": "virtualMachinesTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "ccc",
+        "collection": "virtual machines",
+        "service_name": "mongodb-atlas",
+        "match": {
+            "updateDescription.updatedFields.revision": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.validFrom": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.originId": {
+                "$exists": false
+            }
+        },
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false,
+        "skip_catchup_events": false,
+        "tolerate_resume_errors": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "createVirtualMachineHistory"
+            }
+        }
+    }
+}

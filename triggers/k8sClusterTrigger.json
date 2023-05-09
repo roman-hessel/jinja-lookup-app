@@ -1,0 +1,40 @@
+{
+    "id": "6454f71b1d9db4ac6563192b",
+    "name": "k8sClusterTrigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "ccc",
+        "collection": "k8s cluster",
+        "service_name": "mongodb-atlas",
+        "match": {
+            "updateDescription.updatedFields.revision": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.validFrom": {
+                "$exists": false
+            },
+            "updateDescription.updatedFields.originId": {
+                "$exists": false
+            }
+        },
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false,
+        "skip_catchup_events": false,
+        "tolerate_resume_errors": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "createK8sClusterHistory"
+            }
+        }
+    }
+}
